@@ -1,0 +1,22 @@
+services:
+  todo_app:
+    build:
+      context: ./todo_app
+    ports:
+      - "8000:80"
+    volumes:
+      - todo_data:/app/data
+    container_name: todo_app
+
+  shorturl_app:
+    build:
+      context: ./shorturl_app
+    ports:
+      - "8001:80"
+    volumes:
+      - shorturl_data:/app/data
+    container_name: shorturl_app
+
+volumes:
+  todo_data:
+  shorturl_data:
